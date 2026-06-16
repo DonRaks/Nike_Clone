@@ -1,45 +1,42 @@
 import React from 'react';
-
-import { Hero, PopularProducts, SuperQuality, Services,SpecialOffer, CustomerReviews, Subscribe,Footer} from './sections';
-
+import Nav from './components/Nav';
 const App = () => {
-  
   return (
-    <main className="relative">
-      <div>Nav</div>
+    <main className='relative bg-gradient-to-r from-gray-950 to-indigo-950 min-h-screen overflow-hidden text-white'>
+      <Nav/>
 
       <section className='xl:padding-l wide:padding-r padding-b'>
-        <Hero />
+        Hero
       </section>
 
-      <section className="padding">
-        <PopularProducts />   
+      <section className='padding'>
+        Popular Products
       </section>
 
-      <section className="padding">
-        <SuperQuality />
+      <section className='padding'>
+        Super Quality
       </section>
 
       <section className='padding-x py-10'>
-        <Services />
+        Services
       </section>
 
-      <section className="padding">
-        <SpecialOffer />
+      <section className='padding'>
+        Special Offer
       </section>
 
-      <section className='bg-sky-50 padding' >
-        <CustomerReviews />
+      <section className='bg-pale-blue padding'>
+        Customer Reviews
       </section>
 
       <section className='padding-x sm:py-32 py-16 w-full'>
-        <Subscribe />
+        Subscribe
       </section>
 
-      <section className=' bg-black padding-x padding-t pb-8' >
-        <Footer />
+      <section className='bg-black padding-x padding-t pb-8'>
+        Footer
       </section>
-    </main> 
+    </main>
   );
 };
 
