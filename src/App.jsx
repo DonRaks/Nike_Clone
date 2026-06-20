@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './components/Nav';
 import Hero from './sections/Hero';
-import { CustomerReviews, PopularProducts, Services, SpecialOffer, SuperQuality } from './sections';
+import { CustomerReviews, Footer, PopularProducts, Services, SpecialOffer, Subscribe, SuperQuality } from './sections';
 
 
 const App = () => {
@@ -34,11 +34,11 @@ const App = () => {
       </section>
 
       <section className='padding-x sm:py-32 py-16 w-full'>
-        Subscribe
+        <Subscribe/>
       </section>
 
       <section className='bg-black padding-x padding-t pb-8'>
-        Footer
+        <Footer/>
       </section>
     </main>
   );
