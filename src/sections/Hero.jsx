@@ -19,9 +19,17 @@ const Hero = () => {
         {/* this is the heading of the hero section */}
 
         <h1 className="text-8xl font-palanquin max-sm:text-[52px] max-sm:leading-[32px] font-bold text-gray-100 mt-5">
-            <span className='xl:bg-gradient-to-r from-gray-950 to-indigo-950 xl:whitespace-nowrap relative z-10 pr-10' >The New Arrival</span>
-            <br/>
-            <span className='text-lightBlue inline-block mt-3'  >SOLEFORGE</span>
+          
+          <span className="xl:bg-gradient-to-r from-gray-950 to-indigo-950 xl:whitespace-nowrap relative z-0 xl:z-10 pr-10">
+            The New Arrival
+          </span>
+
+          <br />
+
+          <span className="text-lightBlue inline-block mt-3">
+            SOLEFORGE
+          </span>
+
           shoes
         </h1>
 

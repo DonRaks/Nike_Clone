@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './components/Nav';
 import Hero from './sections/Hero';
-import { PopularProducts, Services, SuperQuality } from './sections';
+import { CustomerReviews, PopularProducts, Services, SpecialOffer, SuperQuality } from './sections';
 
 
 const App = () => {
@@ -26,11 +26,11 @@ const App = () => {
       </section>
 
       <section className='padding'>
-        Special Offer
+        <SpecialOffer/>
       </section>
 
       <section className='bg-pale-blue padding'>
-        Customer Reviews
+        <CustomerReviews/>
       </section>
 
       <section className='padding-x sm:py-32 py-16 w-full'>

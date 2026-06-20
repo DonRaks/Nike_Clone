@@ -22,7 +22,7 @@ const MobileMenu = ({ isOpen, setIsOpen, navLinks }) => {
       className={`
         fixed inset-0 z-50 bg-black/40 backdrop-blur-sm
         transition-opacity duration-300 ease-in-out
-        ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"}
+        ${isOpen ? "opacity-300 visible" : "opacity-0 invisible"}
       `}
       onClick={() => setIsOpen(false)}
     >
