@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './components/Nav';
 import Hero from './sections/Hero';
-import { PopularProducts, SuperQuality } from './sections';
+import { PopularProducts, Services, SuperQuality } from './sections';
 
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
       </section>
 
       <section className='padding-x py-10'>
-        Services
+        <Services/>
       </section>
 
       <section className='padding'>
