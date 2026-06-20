@@ -1,20 +1,24 @@
 import React from 'react';
 import Nav from './components/Nav';
+import Hero from './sections/Hero';
+import { PopularProducts, SuperQuality } from './sections';
+
+
 const App = () => {
   return (
     <main className='relative bg-gradient-to-r from-gray-950 to-indigo-950 min-h-screen overflow-hidden text-white'>
       <Nav/>
 
-      <section className='xl:padding-l wide:padding-r padding-b'>
-        Hero
+      <section className='xl:padding-l wide:padding-r padding-b '>
+        <Hero/>
+      </section>
+
+      <section className='padding '>
+        <PopularProducts/>
       </section>
 
       <section className='padding'>
-        Popular Products
-      </section>
-
-      <section className='padding'>
-        Super Quality
+        <SuperQuality/>
       </section>
 
       <section className='padding-x py-10'>

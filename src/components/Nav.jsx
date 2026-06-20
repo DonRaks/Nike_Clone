@@ -18,13 +18,15 @@ const Nav = () => {
             alt="Logo"
             width={130}
             height={40}
+            
           />
         </a>
 
+
         {/* Desktop Links */}
-        <ul className="flex flex-1 justify-end items-center gap-16 max-lg:hidden">
+        <ul className="flex flex-1 justify-center items-center gap-16 max-lg:hidden">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li className="font-bold hover:border-b-2 hover:border-coral-red" key={link.href}>
               <a
                 href={link.href}
                 className="font-montserrat text-lg text-slate-gray hover:text-coral-red"
@@ -34,6 +36,14 @@ const Nav = () => {
             </li>
           ))}
         </ul>
+
+              
+        <div className='flex gap-2 text-lg leading-normal font-medium font-montserrat max-lg:hidden wide:mr-24'>
+          <a href='/'>Sign in</a>
+          <span>/</span>
+          <a href='/'>Explore now</a>
+        </div>
+
 
         {/* Hamburger */}
         <div
