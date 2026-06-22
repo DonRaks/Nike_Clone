@@ -26,10 +26,10 @@ const Nav = () => {
         {/* Desktop Links */}
         <ul className="flex flex-1 justify-center items-center gap-16 max-lg:hidden">
           {navLinks.map((link) => (
-            <li className="font-bold hover:border-b-2 hover:border-coral-red" key={link.href}>
+            <li className="font-bold hover:border-b-2 hover:border-red-600" key={link.href}>
               <a
                 href={link.href}
-                className="font-montserrat text-lg text-slate-gray hover:text-coral-red"
+                className="font-montserrat text-lg text-white hover:text-red-600"
               >
                 {link.label}
               </a>

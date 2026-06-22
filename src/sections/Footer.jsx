@@ -17,7 +17,7 @@ const Footer = () => {
             />
           </a>
           <p className='mt-6 text-base leading-7 font-montserrat text-white-400 sm:max-w-sm'>
-            Get shoes ready for the new term at your nearest Nike store. Find
+            Get shoes ready for the new term at your nearest Soleforge store. Find
             Your perfect Size In Store. Get Rewards
           </p>
           <div className='flex items-center gap-5 mt-8'>
@@ -62,7 +62,7 @@ const Footer = () => {
             height={20}
             className='rounded-full m-0'
           />
-          <p>Copyright. All rights reserved.</p>
+          <p>Copyright All rights reserved.</p>
         </div>
         <p className='font-montserrat cursor-pointer'>Terms & Conditions</p>
       </div>

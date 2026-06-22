@@ -11,12 +11,13 @@ const Subscribe = () => {
         Sign Up for
         <span className='text-red-400'> Updates </span>& Newsletter
       </h3>
-      <div className='lg:max-w-[40%] w-full flex items-center max-sm:flex-col bg-white gap-5 p-2.5 sm:border sm:border-gray rounded-full'>
-        <input type='text' placeholder='subscribe@soleforge.com' className='input' />
+      <div className='lg:max-w-[40%] w-full sm:w-100 flex items-center sm:h-[25] justify-between bg-white gap-5 p-2.5 sm:border sm:border-gray rounded-full'>
+        <input type='text' placeholder='subscribe@soleforge.com' className='input  bg-transparent border-none' />
         <div className='flex max-sm:justify-end items-center max-sm:w-full'> 
           
 
-          <Button label='Sign Up' fullWidth />
+          <Button label='Sign Up' fullWidth className="" />
+          
         </div>
       </div>
     </section>
