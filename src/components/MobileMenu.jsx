@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const MobileMenu = ({ isOpen, setIsOpen, navLinks }) => {
   const [animateItems, setAnimateItems] = useState(false);
@@ -22,7 +22,7 @@ const MobileMenu = ({ isOpen, setIsOpen, navLinks }) => {
       className={`
         fixed inset-0 z-50 bg-black/40 backdrop-blur-sm
         transition-opacity duration-300 ease-in-out
-        ${isOpen ? "opacity-300 visible" : "opacity-0 invisible"}
+        ${isOpen ? 'opacity-300 visible' : 'opacity-0 invisible'}
       `}
       onClick={() => setIsOpen(false)}
     >
@@ -38,7 +38,7 @@ const MobileMenu = ({ isOpen, setIsOpen, navLinks }) => {
           overflow-hidden
 
           transform transition-transform duration-300 ease-in-out
-          ${isOpen ? "translate-x-0" : "-translate-x-full"}
+          ${isOpen ? 'translate-x-0' : '-translate-x-full'}
         `}
         onClick={(e) => e.stopPropagation()}
       >
@@ -60,11 +60,11 @@ const MobileMenu = ({ isOpen, setIsOpen, navLinks }) => {
               key={link.href}
               className={`
                 transform
-                ${animateItems ? "opacity-100 translate-x-0" : "opacity-0 translate-x-[-20px]"}
+                ${animateItems ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-[-20px]'}
                 transition-all duration-300 hover:border-b-gray-950
               `}
               style={{
-                transitionDelay: animateItems ? `${index * 120}ms` : "0ms",
+                transitionDelay: animateItems ? `${index * 120}ms` : '0ms',
               }}
             >
               <a

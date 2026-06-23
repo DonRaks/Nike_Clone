@@ -1,70 +1,70 @@
-import React, { useState, useEffect, useRef } from 'react'
-import Button from '../components/Button'
-import { arrowRight } from '../assets/icons'
-import { shoes, statistics } from '../constants'
-import { bigShoe1 } from '../assets/images/index.js'
-import ShoeCard from '../components/ShoeCard'
-import gsap from "gsap"
+import React, { useState, useEffect, useRef } from 'react';
+import Button from '../components/Button';
+import { arrowRight } from '../assets/icons';
+import { shoes, statistics } from '../constants';
+import { bigShoe1 } from '../assets/images/index.js';
+import ShoeCard from '../components/ShoeCard';
+import gsap from 'gsap';
 
 const Hero = () => {
-  const [bigShoeImg, setBigShoeImg] = useState(bigShoe1)
+  const [bigShoeImg, setBigShoeImg] = useState(bigShoe1);
 
   // REFS
-  const descRef = useRef(null)
-  const shoeRef = useRef(null)
-  const statsRefs = useRef([])
+  const descRef = useRef(null);
+  const shoeRef = useRef(null);
+  const statsRefs = useRef([]);
 
-  statsRefs.current = []
+  statsRefs.current = [];
 
   // NAVBAR STAGGER (optional if you have nav items with class .nav-item)
   useEffect(() => {
-    gsap.from(".nav-item", {
+    gsap.from('.nav-item', {
       y: -20,
       opacity: 0,
       duration: 0.6,
       stagger: 0.15,
-      ease: "power2.out",
-    })
-  }, [])
+      ease: 'power2.out',
+    });
+  }, []);
 
   // TYPEWRITER EFFECT (PARAGRAPH ONLY)
   useEffect(() => {
-  const el = descRef.current;
+    const el = descRef.current;
 
-  const words = el.innerText.split(" "); // split into words
-  el.innerText = "";
+    const words = el.innerText.split(' '); // split into words
+    el.innerText = '';
 
-  let i = 0;
+    let i = 0;
 
-  const type = () => {
-    if (i < words.length) {
-      el.innerText += (i === 0 ? "" : " ") + words[i];
-      i++;
-      setTimeout(type, 120); // slower per word (better UX)
-    }
-  };
+    const type = () => {
+      if (i < words.length) {
+        el.innerText += (i === 0 ? '' : ' ') + words[i];
+        i++;
+        setTimeout(type, 120); // slower per word (better UX)
+      }
+    };
 
-  type();
-}, []);
+    type();
+  }, []);
 
   // COUNTER UP STATS
   useEffect(() => {
     statistics.forEach((stat, i) => {
-      const obj = { val: 0 }
+      const obj = { val: 0 };
 
       gsap.to(obj, {
         val: parseInt(stat.value),
         duration: 2,
-        ease: "power2.out",
+        ease: 'power2.out',
         onUpdate: () => {
           if (statsRefs.current[i]) {
-            const span = statsRefs.current[i].querySelector("span")
-            if (span) span.innerText = Math.floor(obj.val) + "k+"
+            const span = statsRefs.current[i].querySelector('span');
+            if (span) span.innerText = Math.floor(obj.val) + 'k+';
           }
         },
-      })
-    })
-  }, [])
+      });
+    });
+  }, []);
 
   // FLOATING SHOE (YOYO EFFECT)
   useEffect(() => {
@@ -73,9 +73,9 @@ const Hero = () => {
       duration: 2,
       repeat: -1,
       yoyo: true,
-      ease: "sine.inOut",
-    })
-  }, [])
+      ease: 'sine.inOut',
+    });
+  }, []);
 
   // SLIDE-IN ANIMATION ON SHOE IMAGE CLICK
   useEffect(() => {
@@ -89,10 +89,10 @@ const Hero = () => {
         x: 0,
         opacity: 1,
         duration: 0.6,
-        ease: "power2.out",
+        ease: 'power2.out',
       }
-    )
-  }, [bigShoeImg])
+    );
+  }, [bigShoeImg]);
 
   return (
     <section
@@ -101,23 +101,14 @@ const Hero = () => {
     >
       {/* LEFT SIDE */}
       <div className="relative xl:w-2/5 flex flex-col justify-center items-start w-full max-xl:padding-x pt-28">
-
-        <p className="text-xl font-bold text-gray-500">
-          Our Summer collections
-        </p>
+        <p className="text-xl font-bold text-gray-500">Our Summer collections</p>
 
         <h1 className="text-8xl font-palanquin max-sm:text-[52px] max-sm:leading-[32px] font-bold text-gray-100 mt-5">
-
           <span className="xl:bg-gradient-to-r from-gray-950 to-indigo-950 xl:whitespace-nowrap relative z-0 xl:z-10 pr-10">
             The New Arrival
           </span>
-
           <br />
-
-          <span className="text-lightBlue inline-block mt-3">
-            SOLEFORGE
-          </span>
-
+          <span className="text-lightBlue inline-block mt-3">SOLEFORGE</span>
           shoes
         </h1>
 
@@ -126,7 +117,7 @@ const Hero = () => {
           ref={descRef}
           className="text-lg mt-6 mb-14 leading-8 sm:max-w-sm font-normal text-gray-500"
         >
-          Discover  our  latest  summer  collection  and  enjoy  exclusive  discounts!
+          Discover our latest summer collection and enjoy exclusive discounts!
         </p>
 
         <Button label="Shop Now" iconURL={arrowRight} />
@@ -139,12 +130,8 @@ const Hero = () => {
               ref={(el) => (statsRefs.current[index] = el)}
               className="flex flex-col"
             >
-              <span className="text-4xl font-bold">
-                0k+
-              </span>
-              <span className="text-lg leading-8 font-normal text-gray-500">
-                {stat.label}
-              </span>
+              <span className="text-4xl font-bold">0k+</span>
+              <span className="text-lg leading-8 font-normal text-gray-500">{stat.label}</span>
             </div>
           ))}
         </div>
@@ -152,13 +139,15 @@ const Hero = () => {
 
       {/* RIGHT SIDE - SHOE */}
       <div className="relative flex flex-1 justify-center items-center xl:min-h-screen max-xl:py-40 bg-sky-500 bg-hero bg-cover bg-center overflow-visible">
-
         <img
           ref={shoeRef}
           src={bigShoeImg}
           alt="shoe collection"
           width={610}
           height={500}
+          loading="eager"
+          decoding="auto"
+          fetchpriority="high"
           className="object-contain relative z-10 pointer-events-none"
         />
 
@@ -176,7 +165,7 @@ const Hero = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

@@ -2,13 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-
 // Register ScrollTrigger plugin globally
 gsap.registerPlugin(ScrollTrigger);
 
 /**
  * HorizontalBridge Component
- * 
+ *
  * A premium horizontal scroll section that bridges SuperQuality and Services.
  * Features:
  * - Pins section while scrolling vertically
@@ -52,7 +51,7 @@ const HorizontalBridge = () => {
 
         /**
          * Main horizontal scroll animation
-         * 
+         *
          * How it works:
          * 1. As user scrolls down the page, ScrollTrigger measures scroll distance
          * 2. ScrollTrigger converts vertical scroll into horizontal movement via scrub
@@ -87,7 +86,7 @@ const HorizontalBridge = () => {
   return (
     <section
       ref={sectionRef}
-      className='relative w-full h-screen overflow-hidden bg-gradient-to-b from-gray-900 to-black'
+      className="relative w-full h-screen overflow-hidden bg-gradient-to-b from-gray-900 to-black"
     >
       {/* 
         Track Container
@@ -95,71 +94,67 @@ const HorizontalBridge = () => {
         - Will be translated left via GSAP animation
         - Each child is 100vw to create full-screen panels
       */}
-      <div
-        ref={trackRef}
-        className='flex flex-row h-full gap-0'
-      >
+      <div ref={trackRef} className="flex flex-row h-full gap-0">
         {/* ===== PANEL 1: Innovation ===== */}
-        <div className='w-screen h-screen flex-shrink-0 flex items-center justify-center px-8'>
-          <div className='max-w-2xl'>
+        <div className="w-screen h-screen flex-shrink-0 flex items-center justify-center px-8">
+          <div className="max-w-2xl">
             {/* Animated heading */}
-            <h2 className='text-5xl sm:text-6xl font-bold mb-6 leading-tight text-white'>
+            <h2 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight text-white">
               Innovation Meets Performance
             </h2>
             {/* Descriptive text */}
-            <p className='text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed'>
-              Every detail engineered for the athlete who demands more. Advanced materials, 
+            <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
+              Every detail engineered for the athlete who demands more. Advanced materials,
               cutting-edge construction, and decades of expertise unite in perfect harmony.
             </p>
             {/* Visual indicator */}
-            <div className='flex gap-2'>
-              <div className='w-3 h-3 rounded-full bg-orange-500'></div>
-              <div className='w-3 h-3 rounded-full bg-gray-600'></div>
-              <div className='w-3 h-3 rounded-full bg-gray-600'></div>
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-orange-500"></div>
+              <div className="w-3 h-3 rounded-full bg-gray-600"></div>
+              <div className="w-3 h-3 rounded-full bg-gray-600"></div>
             </div>
           </div>
         </div>
 
         {/* ===== PANEL 2: Design Philosophy ===== */}
-        <div className='w-screen h-screen flex-shrink-0 flex items-center justify-center px-8'>
-          <div className='max-w-2xl'>
+        <div className="w-screen h-screen flex-shrink-0 flex items-center justify-center px-8">
+          <div className="max-w-2xl">
             {/* Animated heading */}
-            <h2 className='text-5xl sm:text-6xl font-bold mb-6 leading-tight text-white'>
+            <h2 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight text-white">
               Design That Inspires
             </h2>
             {/* Descriptive text */}
-            <p className='text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed'>
-              Form follows function. Our design philosophy challenges conventions, 
-              creating products that are as beautiful as they are functional. 
-              Each curve, each contour serves a purpose.
+            <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
+              Form follows function. Our design philosophy challenges conventions, creating products
+              that are as beautiful as they are functional. Each curve, each contour serves a
+              purpose.
             </p>
             {/* Visual indicator */}
-            <div className='flex gap-2'>
-              <div className='w-3 h-3 rounded-full bg-gray-600'></div>
-              <div className='w-3 h-3 rounded-full bg-orange-500'></div>
-              <div className='w-3 h-3 rounded-full bg-gray-600'></div>
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-gray-600"></div>
+              <div className="w-3 h-3 rounded-full bg-orange-500"></div>
+              <div className="w-3 h-3 rounded-full bg-gray-600"></div>
             </div>
           </div>
         </div>
 
         {/* ===== PANEL 3: Quality Commitment ===== */}
-        <div className='w-screen h-screen flex-shrink-0 flex items-center justify-center px-8'>
-          <div className='max-w-2xl'>
+        <div className="w-screen h-screen flex-shrink-0 flex items-center justify-center px-8">
+          <div className="max-w-2xl">
             {/* Animated heading */}
-            <h2 className='text-5xl sm:text-6xl font-bold mb-6 leading-tight text-white'>
+            <h2 className="text-5xl sm:text-6xl font-bold mb-6 leading-tight text-white">
               Uncompromising Quality
             </h2>
             {/* Descriptive text */}
-            <p className='text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed'>
-              We stand behind every product with rigorous testing and premium materials. 
-              From the lab to your feet, quality is non-negotiable. 
-              This is our promise to you.
+            <p className="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
+              We stand behind every product with rigorous testing and premium materials. From the
+              lab to your feet, quality is non-negotiable. This is our promise to you.
             </p>
             {/* Visual indicator */}
-            <div className='flex gap-2'>
-              <div className='w-3 h-3 rounded-full bg-gray-600'></div>
-              <div className='w-3 h-3 rounded-full bg-gray-600'></div>
-              <div className='w-3 h-3 rounded-full bg-orange-500'></div>
+            <div className="flex gap-2">
+              <div className="w-3 h-3 rounded-full bg-gray-600"></div>
+              <div className="w-3 h-3 rounded-full bg-gray-600"></div>
+              <div className="w-3 h-3 rounded-full bg-orange-500"></div>
             </div>
           </div>
         </div>

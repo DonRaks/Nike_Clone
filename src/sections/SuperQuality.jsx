@@ -1,13 +1,13 @@
 // React hooks for lifecycle and DOM references
-import { useEffect, useRef } from "react";
+import { useEffect, useRef } from 'react';
 
 // GSAP core and the ScrollTrigger plugin for scroll-linked animations
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 // Local asset and button component imports
-import { shoe8 } from "../assets/images";
-import Button from "../components/Button";
+import { shoe8 } from '../assets/images';
+import Button from '../components/Button';
 
 // Register the scroll plugin once before creating animations
 gsap.registerPlugin(ScrollTrigger);
@@ -42,8 +42,8 @@ const SuperQuality = () => {
         scrollTrigger: {
           // Trigger text reveal when left-side content enters view.
           trigger: leftContentRef.current,
-          start: "top 85%",
-          end: "top 35%",
+          start: 'top 85%',
+          end: 'top 35%',
           scrub: 1.2,
           markers: false,
         },
@@ -55,19 +55,19 @@ const SuperQuality = () => {
           yPercent: 110,
           opacity: 0,
           duration: 1.2,
-          ease: "power3.out",
+          ease: 'power3.out',
           stagger: 0.22,
         })
         .from(
-          firstParagraphRef.current.querySelectorAll(".word"),
+          firstParagraphRef.current.querySelectorAll('.word'),
           {
             y: 28,
             opacity: 0,
             duration: 0.9,
-            ease: "power3.out",
+            ease: 'power3.out',
             stagger: 0.12,
           },
-          "-=0.45"
+          '-=0.45'
         )
         .from(
           secondParagraphRef.current,
@@ -75,9 +75,9 @@ const SuperQuality = () => {
             y: 28,
             opacity: 0,
             duration: 1,
-            ease: "power3.out",
+            ease: 'power3.out',
           },
-          "-=0.55"
+          '-=0.55'
         )
         .from(
           buttonRef.current,
@@ -86,9 +86,9 @@ const SuperQuality = () => {
             opacity: 0,
             scale: 0.98,
             duration: 0.8,
-            ease: "back.out(1.4)",
+            ease: 'back.out(1.4)',
           },
-          "-=0.35"
+          '-=0.35'
         )
         .from(
           imageRef.current,
@@ -98,9 +98,9 @@ const SuperQuality = () => {
             scale: 0.96,
             opacity: 0,
             duration: 1.2,
-            ease: "power3.out",
+            ease: 'power3.out',
           },
-          ">"
+          '>'
         );
 
       // Apply a subtle parallax effect to the image as the user continues scrolling.
@@ -108,11 +108,11 @@ const SuperQuality = () => {
         y: 12,
         rotation: -1.2,
         scale: 1,
-        ease: "none",
+        ease: 'none',
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 85%",
-          end: "bottom top",
+          start: 'top 85%',
+          end: 'bottom top',
           scrub: 0.9,
           markers: false,
         },
@@ -132,19 +132,19 @@ const SuperQuality = () => {
   return (
     <section
       ref={sectionRef}
-      id='about-us'
-      className='flex justify-between items-center max-lg:flex-col gap-10 w-full max-container'>
-      <div ref={leftContentRef} className='flex flex-1 flex-col'>
-        <h2 className='font-palanquin capitalize text-4xl lg:max-w-lg font-bold leading-tight overflow-hidden'>
+      id="about-us"
+      className="flex justify-between items-center max-lg:flex-col gap-10 w-full max-container"
+    >
+      <div ref={leftContentRef} className="flex flex-1 flex-col">
+        <h2 className="font-palanquin capitalize text-4xl lg:max-w-lg font-bold leading-tight overflow-hidden">
           {/* Each heading line is wrapped so GSAP can animate the lines separately. */}
-          <span ref={addHeadingLine} className='block overflow-hidden'>
-            <span className='inline-block'>We Provide You</span>
+          <span ref={addHeadingLine} className="block overflow-hidden">
+            <span className="inline-block">We Provide You</span>
           </span>
-          <span ref={addHeadingLine} className='block overflow-hidden'>
-            <span className='inline-block'>
-              <span className='text-red-500'>Super</span>{" "}
-              <span className='text-red-300'>Quality</span>{" "}
-              Shoes
+          <span ref={addHeadingLine} className="block overflow-hidden">
+            <span className="inline-block">
+              <span className="text-red-500">Super</span>{' '}
+              <span className="text-red-300">Quality</span> Shoes
             </span>
           </span>
         </h2>
@@ -152,58 +152,60 @@ const SuperQuality = () => {
         {/* First paragraph animates word by word for a premium reveal. */}
         <p
           ref={firstParagraphRef}
-          className='mt-4 lg:max-w-lg info-text text-gray-500 leading-relaxed overflow-hidden'>
-          <span className='inline-block mr-1 word'>Ensuring</span>
-          <span className='inline-block mr-1 word'>premium</span>
-          <span className='inline-block mr-1 word'>comfort</span>
-          <span className='inline-block mr-1 word'>and</span>
-          <span className='inline-block mr-1 word'>style,</span>
-          <span className='inline-block mr-1 word'>our</span>
-          <span className='inline-block mr-1 word'>meticulously</span>
-          <span className='inline-block mr-1 word'>crafted</span>
-          <span className='inline-block mr-1 word'>footwear</span>
-          <span className='inline-block mr-1 word'>is</span>
-          <span className='inline-block mr-1 word'>designed</span>
-          <span className='inline-block mr-1 word'>to</span>
-          <span className='inline-block mr-1 word'>elevate</span>
-          <span className='inline-block mr-1 word'>your</span>
-          <span className='inline-block mr-1 word'>experience,</span>
-          <span className='inline-block mr-1 word'>providing</span>
-          <span className='inline-block mr-1 word'>you</span>
-          <span className='inline-block mr-1 word'>with</span>
-          <span className='inline-block mr-1 word'>unmatched</span>
-          <span className='inline-block mr-1 word'>quality,</span>
-          <span className='inline-block mr-1 word'>innovation,</span>
-          <span className='inline-block word'>and</span>
-          <span className='inline-block word'>a</span>
-          <span className='inline-block word'>touch</span>
-          <span className='inline-block word'>of</span>
-          <span className='inline-block word'>elegance.</span>
+          className="mt-4 lg:max-w-lg info-text text-gray-500 leading-relaxed overflow-hidden"
+        >
+          <span className="inline-block mr-1 word">Ensuring</span>
+          <span className="inline-block mr-1 word">premium</span>
+          <span className="inline-block mr-1 word">comfort</span>
+          <span className="inline-block mr-1 word">and</span>
+          <span className="inline-block mr-1 word">style,</span>
+          <span className="inline-block mr-1 word">our</span>
+          <span className="inline-block mr-1 word">meticulously</span>
+          <span className="inline-block mr-1 word">crafted</span>
+          <span className="inline-block mr-1 word">footwear</span>
+          <span className="inline-block mr-1 word">is</span>
+          <span className="inline-block mr-1 word">designed</span>
+          <span className="inline-block mr-1 word">to</span>
+          <span className="inline-block mr-1 word">elevate</span>
+          <span className="inline-block mr-1 word">your</span>
+          <span className="inline-block mr-1 word">experience,</span>
+          <span className="inline-block mr-1 word">providing</span>
+          <span className="inline-block mr-1 word">you</span>
+          <span className="inline-block mr-1 word">with</span>
+          <span className="inline-block mr-1 word">unmatched</span>
+          <span className="inline-block mr-1 word">quality,</span>
+          <span className="inline-block mr-1 word">innovation,</span>
+          <span className="inline-block word">and</span>
+          <span className="inline-block word">a</span>
+          <span className="inline-block word">touch</span>
+          <span className="inline-block word">of</span>
+          <span className="inline-block word">elegance.</span>
         </p>
         {/* Second paragraph fades up after the first paragraph animation. */}
         <p
           ref={secondParagraphRef}
-          className='mt-6 lg:max-w-lg info-text text-gray-500 leading-relaxed overflow-hidden'>
-          <span className='inline-block'>
+          className="mt-6 lg:max-w-lg info-text text-gray-500 leading-relaxed overflow-hidden"
+        >
+          <span className="inline-block">
             Our dedication to detail and excellence ensures your satisfaction.
           </span>
         </p>
 
         {/* CTA button animates into view after the text reveal. */}
-        <div ref={buttonRef} className='mt-11 inline-flex'>
-          <Button label='View details' />
+        <div ref={buttonRef} className="mt-11 inline-flex">
+          <Button label="View details" />
         </div>
       </div>
 
       {/* Product image slides and then continues subtle scroll motion. */}
-      <div className='flex-1 flex justify-center items-center'>
+      <div className="flex-1 flex justify-center items-center">
         <img
           ref={imageRef}
           src={shoe8}
-          alt='product detail'
+          alt="product detail"
           width={570}
           height={522}
-          className='object-contain will-change-transform'
+          className="object-contain will-change-transform"
         />
       </div>
     </section>

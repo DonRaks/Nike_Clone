@@ -17,5 +17,5 @@ export {
   SpecialOffer,
   CustomerReviews,
   Subscribe,
-  Footer
-};      
+  Footer,
+};
