@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from './components/Nav';
 import Hero from './sections/Hero';
-import { CustomerReviews, Footer, PopularProducts, Services, SpecialOffer, Subscribe, SuperQuality } from './sections';
+import { CustomerReviews, Footer, PopularProducts, Services, SpecialOffer, Subscribe, SuperQuality, HorizontalBridge } from './sections';
 
 
 const App = () => {
@@ -20,6 +20,9 @@ const App = () => {
       <section className='padding'>
         <SuperQuality/>
       </section>
+
+      {/* HorizontalBridge: Premium horizontal scroll section between SuperQuality and Services */}
+      <HorizontalBridge/>
 
       <section className='padding-x py-10'>
         <Services/>

@@ -1,10 +1,57 @@
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { copyrightSign } from "../assets/icons";
 import { footerLogo, headerLogo } from "../assets/images";
 import { footerLinks, socialMedia } from "../constants";
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Footer = () => {
+  const footerRef = useRef(null);
+  const linkGroupRefs = useRef([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        footerRef.current,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: "top 95%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+
+      gsap.fromTo(
+        linkGroupRefs.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: footerRef.current,
+            start: "top 95%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    }, footerRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <footer className='max-container'>
+    <footer ref={footerRef} className='max-container'>
       <div className='flex justify-between items-start gap-20 flex-wrap max-lg:flex-col'>
         <div className='flex flex-col items-start'>
           <a href='/'>
@@ -33,8 +80,8 @@ const Footer = () => {
         </div>
 
         <div className='flex flex-1 justify-between lg:gap-10 gap-20 flex-wrap'>
-          {footerLinks.map((section) => (
-            <div key={section.title}>
+          {footerLinks.map((section, index) => (
+            <div key={section.title} ref={(el) => (linkGroupRefs.current[index] = el)}>
               <h4 className='font-montserrat text-2xl leading-normal font-medium mb-6 text-white'>
                 {section.title}
               </h4>

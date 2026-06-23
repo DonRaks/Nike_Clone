@@ -1,6 +1,7 @@
 import Hero from './Hero';
 import PopularProducts from './PopularProducts';
 import SuperQuality from './SuperQuality';
+import HorizontalBridge from './HorizontalBridge';
 import Services from './Services';
 import SpecialOffer from './SpecialOffer';
 import CustomerReviews from './CustomerReviews';
@@ -11,6 +12,7 @@ export {
   Hero,
   PopularProducts,
   SuperQuality,
+  HorizontalBridge,
   Services,
   SpecialOffer,
   CustomerReviews,

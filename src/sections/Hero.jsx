@@ -77,6 +77,23 @@ const Hero = () => {
     })
   }, [])
 
+  // SLIDE-IN ANIMATION ON SHOE IMAGE CLICK
+  useEffect(() => {
+    gsap.fromTo(
+      shoeRef.current,
+      {
+        x: 500,
+        opacity: 0,
+      },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.6,
+        ease: "power2.out",
+      }
+    )
+  }, [bigShoeImg])
+
   return (
     <section
       id="home"
